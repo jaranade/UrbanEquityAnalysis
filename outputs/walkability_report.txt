@@ -1,0 +1,41 @@
+================================================================================
+URBAN EQUITY ANALYSIS - LOS ANGELES COUNTY
+Walkability and Amenity Accessibility Assessment
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Census Tracts Analyzed: 2,498
+Total Population Covered: 10,019,635
+Average Walkability Score: 40.2 / 100
+Median Walkability Score: 29.4 / 100
+
+WALKABILITY CATEGORY DISTRIBUTION
+--------------------------------------------------------------------------------
+Excellent   :  682 tracts ( 27.3%) - Population: 2,334,078
+Good        :  269 tracts ( 10.8%) - Population: 1,045,641
+Moderate    :  157 tracts (  6.3%) - Population: 608,803
+Poor        :  112 tracts (  4.5%) - Population: 442,732
+Very Poor   : 1278 tracts ( 51.2%) - Population: 5,588,381
+
+UNDERSERVED AREAS
+--------------------------------------------------------------------------------
+Tracts with Poor/Very Poor walkability: 1,390
+Population in underserved areas: 6,031,113
+Percentage of LA County population: 60.2%
+
+AVERAGE WALKING DISTANCES TO AMENITIES
+--------------------------------------------------------------------------------
+Parks               :    8253 meters (8.25 km)
+Grocery Stores      :    8493 meters (8.49 km)
+Hospitals           :   10030 meters (10.03 km)
+Transit Stops       :    7932 meters (7.93 km)
+Schools             :    8225 meters (8.22 km)
+Pharmacies          :   10357 meters (10.36 km)
+Libraries           :    9475 meters (9.47 km)
+Urgent Care         :   10565 meters (10.57 km)
+
+EQUITY ANALYSIS
+--------------------------------------------------------------------------------
+Correlation: Walkability vs Income: 0.033
+Interpretation: Very weak correlation - walkability issues affect all income levels
