@@ -1,0 +1,31 @@
+@"
+# Data files (too large for GitHub)
+data/
+*.geojson
+*.graphml
+*.csv
+*.shp
+*.shx
+*.dbf
+*.prj
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment
+.env
+venv/
+env/
+
+# Cache
+cache/
+
+# Outputs
+outputs/
+*.png
+*.jpg
+*.pdf
+*.html
+"@ | Out-File -FilePath .gitignore -Encoding UTF8
