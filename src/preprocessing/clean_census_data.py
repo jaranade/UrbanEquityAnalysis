@@ -25,9 +25,9 @@ def clean_and_merge_census():
     print(f"\nTract columns: {tracts.columns.tolist()[:10]}")
     print(f"Demographics columns: {demographics.columns.tolist()}")
     
-    # Ensure GEOID is string type in both datasets
-    tracts['GEOID'] = tracts['GEOID'].astype(str)
-    demographics['GEOID'] = demographics['GEOID'].astype(str)
+    # Ensure GEOID is string type in both datasets and pad to 11 digits
+    tracts['GEOID'] = tracts['GEOID'].astype(str).str.zfill(11)
+    demographics['GEOID'] = demographics['GEOID'].astype(str).str.zfill(11)
     
     print(f"\nData types:")
     print(f"  Tracts GEOID: {tracts['GEOID'].dtype}")
@@ -86,7 +86,7 @@ def clean_and_merge_census():
     
     # If we lost everything, don't filter at all
     if len(merged_filtered) == 0:
-        print("⚠ WARNING: Filtering removed all tracts! Keeping all data.")
+        print("WARNING: Filtering removed all tracts! Keeping all data.")
         merged_filtered = merged.copy()
     
     # Store centroid coordinates as regular columns (not geometry)
@@ -114,7 +114,7 @@ def clean_and_merge_census():
     print(f"\nSaving to {output_path}...")
     merged_filtered.to_file(output_path, driver='GeoJSON')
     
-    print(f"✓ Saved to {output_path}")
+    print(f"[OK] Saved to {output_path}")
     
     # Summary statistics
     print("\n" + "="*50)
@@ -129,7 +129,7 @@ def clean_and_merge_census():
         print(f"Median Income Range: ${merged_filtered.loc[valid_income, 'median_household_income'].min():,.0f} - ${merged_filtered.loc[valid_income, 'median_household_income'].max():,.0f}")
         print(f"Tracts with income data: {valid_income.sum()}")
     else:
-        print("⚠ No valid median income data")
+        print("WARNING: No valid median income data")
     
     print(f"Average Population Density: {merged_filtered['population_density'].mean():.2f} per acre")
     

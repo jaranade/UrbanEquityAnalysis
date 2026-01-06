@@ -1,4 +1,3 @@
-@"
 # Data files (too large for GitHub)
 data/
 *.geojson
@@ -8,24 +7,48 @@ data/
 *.shx
 *.dbf
 *.prj
+*.cpg
+*.sbn
+*.sbx
 
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
 # Environment
 .env
 venv/
 env/
+.venv/
 
 # Cache
 cache/
+.cache/
 
 # Outputs
 outputs/
 *.png
 *.jpg
+*.jpeg
 *.pdf
 *.html
-"@ | Out-File -FilePath .gitignore -Encoding UTF8
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log

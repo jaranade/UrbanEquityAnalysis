@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python src/datacollection/get_neighborhoods.py:*)",
+      "Bash(python:*)"
+    ]
+  }
+}

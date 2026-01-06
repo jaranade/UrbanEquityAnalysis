@@ -12,6 +12,7 @@ load_dotenv()
 sys.path.insert(0, 'src')
 
 from datacollection.get_study_area import get_los_angeles_boundary
+from datacollection.get_neighborhoods import get_los_angeles_neighborhoods
 from datacollection.get_censusdata import get_census_tracts_la, get_census_demographics
 from datacollection.get_amenities import collect_all_amenities
 from datacollection.get_street_network import get_street_network_la
@@ -38,24 +39,28 @@ def main():
         print("Step 1: Getting LA boundary...")
         boundary = get_los_angeles_boundary()
         
-        # Step 2: Get census tracts
-        print("\nStep 2: Getting census tracts...")
+        # Step 2: Get neighborhoods
+        print("\nStep 2: Getting neighborhoods...")
+        neighborhoods = get_los_angeles_neighborhoods()
+
+        # Step 3: Get census tracts (for demographics aggregation)
+        print("\nStep 3: Getting census tracts...")
         tracts = get_census_tracts_la()
-        
-        # Step 3: Get demographics
-        print("\nStep 3: Getting demographic data...")
+
+        # Step 4: Get demographics
+        print("\nStep 4: Getting demographic data...")
         demographics = get_census_demographics(CENSUS_API_KEY)
         
-        # Step 4: Get amenities
-        print("\nStep 4: Collecting amenities from OSM...")
+        # Step 5: Get amenities
+        print("\nStep 5: Collecting amenities from OSM...")
         amenities = collect_all_amenities()
-        
-        # Step 5: Get street network
-        print("\nStep 5: Downloading street network...")
+
+        # Step 6: Get street network
+        print("\nStep 6: Downloading street network...")
         network = get_street_network_la()
-        
-        # Step 6: Validate
-        print("\nStep 6: Validating data...")
+
+        # Step 7: Validate
+        print("\nStep 7: Validating data...")
         validate_collected_data()
         
         print("\n" + "="*50)
